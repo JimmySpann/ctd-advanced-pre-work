@@ -4,16 +4,27 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #d5d5d5;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
 nav {
+    margin-left: 25px;
     display: flex;
     align-items: center;
     gap: 1.5rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 nav a {
@@ -25,4 +36,9 @@ nav a {
 
 nav a:hover {
     color: #2563eb;
+}
+
+nav .active {
+    color: #2563eb;
+    font-weight: bold;
 }
