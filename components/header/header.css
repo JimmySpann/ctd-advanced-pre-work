@@ -1,5 +1,9 @@
+.site-header {
+    --header-text-active: #2563eb;
+}
+
 header {
-    background-color: #d5d5d5;
+    background-color: var(--bg-secondary);
     display: flex;
     margin: 0;
     padding: 0;
@@ -20,21 +24,21 @@ nav {
 
 .logo:hover {
     transform: scale(1.05);
-    color: #2563eb;
+    color: var(--header-text-active);
 }
 
 nav a {
-    color: #374151;
+    color: var(--text-main);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #2563eb;
+    color: var(--header-text-active);
 }
 
 nav .active {
-    color: #2563eb;
+    color: var(--header-text-active);
     font-weight: bold;
 }
