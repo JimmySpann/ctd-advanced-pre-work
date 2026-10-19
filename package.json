@@ -1,0 +1,22 @@
+{
+  "name": "ctd-advanced-pre-work",
+  "version": "1.0.0",
+  "description": "Run \"node scripts/serve.js\" to start live server",
+  "main": "index.html",
+  "scripts": {
+    "start": "vite --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimmySpann/ctd-advanced-pre-work.git"
+  },
+  "author": "JimmySpann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimmySpann/ctd-advanced-pre-work/issues"
+  },
+  "homepage": "https://github.com/JimmySpann/ctd-advanced-pre-work#readme",
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
