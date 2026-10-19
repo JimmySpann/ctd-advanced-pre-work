@@ -16,8 +16,15 @@
     color: var(--text-main);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 main {
     background-color: var(--bg-primary);
+    flex: 1;
 }
 
 section#intro {
@@ -33,19 +40,4 @@ section#gallery {}
 
 section#gallery h2 {
     text-align: center;
-}
-
-.cat-gallery-list {
-    display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    gap: 1.5rem;
-    padding: 2rem;
-}
-
-.card {
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

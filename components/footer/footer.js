@@ -1,20 +1,8 @@
-class SiteFooter extends HTMLElement {
-    async connectedCallback() {
-        try {
-            const response = await fetch('./components/footer/footer.partial.html');
+import { createComponent } from '../../utils/element-maker.js';
 
-            if (!response.ok) {
-                throw new Error(`Failed to load header: ${response.statusText}`);
-            }
+const footerOptions = {
+    fileLocation: './components/footer/footer.partial.html',
+    customElementName: 'site-footer'
+};
 
-            const htmlContent = await response.text();
-            this.innerHTML = htmlContent;
-
-        } catch (error) {
-            console.error('Error loading site-header component:', error);
-        }
-    }
-}
-
-// Register your custom HTML tag
-customElements.define('site-footer', SiteFooter);
+createComponent(footerOptions);
