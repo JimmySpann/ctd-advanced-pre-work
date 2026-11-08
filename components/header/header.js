@@ -1,8 +1,5 @@
-import { createComponent } from '../../utils/element-maker.js';
-
-const headerOptions = {
+export const options = {
     fileLocation: './components/header/header.partial.html',
+    cssLocation: './components/header/header.css',
     customElementName: 'site-header'
 };
-
-createComponent(headerOptions);

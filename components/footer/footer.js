@@ -1,8 +1,5 @@
-import { createComponent } from '../../utils/element-maker.js';
-
-const footerOptions = {
+export const options = {
     fileLocation: './components/footer/footer.partial.html',
+    cssLocation: './components/footer/footer.css',
     customElementName: 'site-footer'
 };
-
-createComponent(footerOptions);
