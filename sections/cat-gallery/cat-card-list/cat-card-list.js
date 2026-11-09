@@ -1,3 +1,5 @@
+import cssStyles from './cat-card-list.css?raw';
+
 import { createCard } from '../../../components/card/card.js';
 import { getCatData } from '../../../lib/cat-api-handler.js';
 
@@ -19,7 +21,8 @@ const onRender = async (element) => {
 }
 
 export const options = {
-    fileLocation: './pages/home/cat-card-list/cat-card-list.partial.html',
+    fileLocation: './sections/cat-gallery/cat-card-list/cat-card-list.partial.html',
+    cssStyles: cssStyles,
     customElementName: 'site-cat-card-list',
     onRender: onRender
 };

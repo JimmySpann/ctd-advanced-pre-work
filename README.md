@@ -8,3 +8,16 @@ Site runs on vite
 clone repo
 npm install
 Type "npm run start" in the terminal to start the web server
+
+
+### To Do
+Major:
+[~] - Add gallery settings
+[ ] - Add pagination
+[ ] - add card facts
+[ ] - Clean up css
+
+Minor:
+[ ] - Figure out whether to keep nav or just use a header
+[ ] - Add animation sliding between Cat Gallery and Cat Facts
+[ ] - Add click to enhance card feature? (Can probably just transform scale then center for time? (but I'd like an overlay))
