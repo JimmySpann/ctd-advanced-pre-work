@@ -1,8 +1,9 @@
+import cssStyles from './card.css?raw';
 import { createCustomElement } from '../../utils/dom-manipulation/element-maker.js';
 
 export const options = {
     fileLocation: './components/card/card.partial.html',
-    cssLocation: './components/card/card.css',
+    cssStyles: cssStyles,
     customElementName: 'site-card'
 };
 

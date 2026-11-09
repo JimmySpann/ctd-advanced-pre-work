@@ -17,18 +17,17 @@ export function parseHtmlToElement(htmlString) {
 }
 
 const loadedCssFiles = new Set();
-export async function addCssToHead(cssLocation, name) {
-    const cssText = await fetchFile(cssLocation);
+export async function addCssToHead(cssStyles, name) {
     const styleEl = document.createElement('style');
-    styleEl.textContent = cssText;
+    styleEl.textContent = cssStyles;
     document.head.appendChild(styleEl);
     loadedCssFiles.add(name);
 }
 
 export async function createCustomElement(options) {
-    const { fileLocation, customElementName, cssLocation } = options;
+    const { fileLocation, customElementName, cssStyles } = options;
     const htmlString = await fetchFile(fileLocation);
     const loadedElement = parseHtmlToElement(htmlString)
-    if (cssLocation) await addCssToHead(cssLocation, customElementName);
+    if (cssStyles) await addCssToHead(cssStyles, customElementName);
     return loadedElement
 }

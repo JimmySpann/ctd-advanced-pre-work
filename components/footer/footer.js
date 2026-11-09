@@ -1,5 +1,7 @@
+import cssStyles from './footer.css?raw';
+
 export const options = {
     fileLocation: './components/footer/footer.partial.html',
-    cssLocation: './components/footer/footer.css',
+    cssStyles: cssStyles,
     customElementName: 'site-footer'
 };
