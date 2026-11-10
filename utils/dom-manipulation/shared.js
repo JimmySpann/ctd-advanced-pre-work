@@ -18,6 +18,7 @@ export function parseHtmlToElement(htmlString) {
 
 const loadedCssFiles = new Set();
 export async function addCssToHead(cssStyles, name) {
+    if (loadedCssFiles.has(name)) { return; } // Avoid adding the same CSS multiple times
     const styleEl = document.createElement('style');
     styleEl.textContent = cssStyles;
     document.head.appendChild(styleEl);
