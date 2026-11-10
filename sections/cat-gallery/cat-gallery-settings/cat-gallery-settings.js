@@ -11,6 +11,12 @@ const onRender = async (element) => {
         option.textContent = breed.name;
         selectElement.appendChild(option);
     });
+
+    selectElement.addEventListener('change', async (event) => {
+        const selectedBreedId = event.target.value;
+        const catCardListElement = document.querySelector('site-cat-card-list');
+        await catCardListElement.fetchAndRender(selectedBreedId);
+    });
 }
 
 export const options = {
