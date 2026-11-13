@@ -1,11 +1,11 @@
-.cat-gallery-list {
+.pet-gallery-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
 }
 
-.cat-gallery-pagination {
+.pet-gallery-pagination {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
