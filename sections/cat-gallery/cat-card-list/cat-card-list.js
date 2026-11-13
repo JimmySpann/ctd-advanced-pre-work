@@ -1,22 +1,20 @@
 import cssStyles from './cat-card-list.css?raw';
 
 import { createCard } from '../../../components/card/card.js';
-import { getCatData } from '../../../lib/cat-api-handler.js';
+import { getCatImages } from '../../../lib/cat-api-handler.js';
 
 async function onRender(element) {
-    fetchAndRender('any', element);
+    fetchAndRender('any', 'rand', element);
 }
 
 
-async function fetchAndRender(breedId, element) {
-    console.log(`Fetching and rendering cats for breed ID: ${breedId}`);
+async function fetchAndRender(breedId, sort, element) {
     const processedBreedId = breedId === 'any' ? null : breedId; // Default to 'any' if no breedId is provided
-    const unprocessedCatData = await getCatData(processedBreedId);
+    const unprocessedCatImagesData = await getCatImages(processedBreedId, sort);
     const rootElement = this ? this : element; // Use 'this' if available, otherwise use the passed element
-
     rootElement.querySelector('.cat-gallery-list').innerHTML = ''; // Clear existing cards
 
-    const processedCatData = unprocessedCatData.map(cat => ({
+    const processedCatImagesData = unprocessedCatImagesData.map(cat => ({
         imageSrc: cat.url,
         imageAlt: cat.breeds[0]?.name || 'Unknown',
         title: cat.breeds[0]?.name || 'Unknown',
@@ -24,7 +22,7 @@ async function fetchAndRender(breedId, element) {
     }));
 
     const catGalleryListElement = rootElement.querySelector('.cat-gallery-list');
-    for (const cardData of processedCatData) {
+    for (const cardData of processedCatImagesData) {
         const newCardElement = await createCard(cardData);
         catGalleryListElement.appendChild(newCardElement);
     }

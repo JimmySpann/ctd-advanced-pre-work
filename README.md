@@ -34,18 +34,17 @@ Follow these steps to get the project up and running locally on your machine:
 
 ### To Do
 #### Major:
-- [~] Add gallery settings
-    - [ ] add proper loading styles
-    - [ ] minor settings style improvements
-    - [ ] add sort option, default to random
-- [ ] Add pagination
-- [ ] Add card facts
+- [x] Add gallery settings
+    - [x] add sort option, default to random
+- [~] Add pagination
+- [ ] Add dogs page (since cat facts and health tips hide behind a pay wall)
 - [ ] Clean up css
+    - [ ] Add proper loading styles
 - [ ] Finalize Read me
 
 #### Minor:
-- [ ] Figure out whether to keep nav bar or just use a heading
-- [ ] Add animation sliding between Cat Gallery and Cat Facts
+- [x] Figure out whether to keep nav bar or just use a heading
+- [ ] Add animation sliding between Cat Gallery and Dog Gallery
 - [ ] Add click to enhance card feature? (Can probably just transform scale then center for time? (but I'd like an overlay))
 
 ### Prework Criteria
