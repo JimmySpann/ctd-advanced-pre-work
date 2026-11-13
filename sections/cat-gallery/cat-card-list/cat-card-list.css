@@ -4,3 +4,15 @@
     gap: 1.5rem;
     padding: 2rem;
 }
+
+.cat-gallery-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.refresh-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
