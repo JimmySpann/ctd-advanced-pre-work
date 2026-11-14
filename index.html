@@ -13,17 +13,35 @@
     <site-header></site-header>
     <main>
         <section id="intro">
-            <h1>Welcome to Our Pet Site</h1>
-            <p>Discover the wonderful world of cats!</p>
+            <h1>Welcome to Pet Gallery!</h1>
+            <p>Discover pet images based on breeds! Supports cats and dogs!</p>
         </section>
 
-        <section id="gallery">
-            <h2>Pet Gallery</h2>
+        <section id="pet-option">
+            <h2>Choose your pet type!</h2>
+            <input type="checkbox" id="pet-toggle" class="toggle-checkbox" />
 
-            <site-pet-gallery-settings></site-pet-gallery-settings>
+            <!-- The visible switch -->
+            <label for="pet-toggle" class="switch-label">
+                <span class="label-text">Cats</span>
+                <span class="switch-pill"></span>
+                <span class="label-text">Dogs</span>
+            </label>
+        </section>
 
-            <site-pet-card-list></site-pet-card-list>
-
+        <section id="gallery-viewport">
+            <div id="gallery-container">
+                <div id="cat-gallery" class="gallery">
+                    <h2>Cat Gallery</h2>
+                    <site-pet-gallery-settings pet-type="cat"></site-pet-gallery-settings>
+                    <site-pet-card-list pet-type="cat"></site-pet-card-list>
+                </div>
+                <div id="dog-gallery" class="gallery">
+                    <h2>Dog Gallery</h2>
+                    <site-pet-gallery-settings pet-type="dog"></site-pet-gallery-settings>
+                    <site-pet-card-list pet-type="dog"></site-pet-card-list>
+                </div>
+            </div>
         </section>
     </main>
 

@@ -37,8 +37,8 @@ Follow these steps to get the project up and running locally on your machine:
 - [x] Add gallery settings
     - [x] add sort option, default to random
 - [x] Add pagination
-- [~] Add dogs page (since cat facts and health tips hide behind a pay wall)
-- [ ] Clean up css
+- [x] Add dogs page (since cat facts and health tips hide behind a pay wall)
+- [~] Clean up css
     - [ ] Add proper loading styles
 - [ ] Finalize Read me
    - [ ] Properly lay out intro
@@ -46,7 +46,7 @@ Follow these steps to get the project up and running locally on your machine:
 #### Minor:
 - [ ] Add dynamic urls (to choose animal type, breed, sort direction, and page by navigation bar)
 - [ ] Replace nav bar with a fancier header
-- [ ] Add animation sliding between Pet Gallery and Dog Gallery
+- [x] Add animation sliding between Pet Gallery and Dog Gallery
 - [ ] Add click to enhance card feature? (Can probably just transform scale then center for time? (but I'd like an overlay))
 
 ### Prework Criteria

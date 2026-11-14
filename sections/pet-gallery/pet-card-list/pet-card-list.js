@@ -10,11 +10,14 @@ async function onRender(element) {
 }
 
 async function fetchAndRender(breedId, sort, page, element) {
-    const processedBreedId = breedId === 'any' ? null : breedId; // Default to 'any' if no breedId is provided
-    const { data: unprocessedPetImagesData, pagination } = await getPetImages(processedBreedId, sort, page);
-
     const rootElement = this ? this : element; // Use 'this' if available, otherwise use the passed element
+    const species = rootElement.getAttribute('pet-type') || 'cat'
     rootElement.querySelector('.pet-gallery-list').innerHTML = ''; // Clear existing cards
+
+
+    const processedBreedId = breedId === 'any' ? null : breedId; // Default to 'any' if no breedId is provided
+    const { data: unprocessedPetImagesData, pagination } = await getPetImages(species, processedBreedId, sort, page);
+
 
     await handleCardListCreation(unprocessedPetImagesData, rootElement);
     await handlePaginationCreation(processedBreedId, sort, rootElement, pagination);
