@@ -13,5 +13,31 @@ export async function createCard(cardData) {
     card.querySelector('.card-title').textContent = cardData.title;
     card.querySelector('.card-image').setAttribute('src', cardData.imageSrc);
     card.querySelector('.card-image').setAttribute('alt', cardData.imageAlt);
+    if (cardData.species === 'dog') { card.classList.add('dog-card') }
+
+    card.addEventListener('click', () => {
+        const isExpanded = card.classList.contains('expanded');
+
+        document.querySelectorAll('.card.expanded').forEach(() => {
+            card.classList.remove('expanded');
+        });
+
+        if (!isExpanded) {
+            card.classList.add('expanded');
+            console.log(card.classList.contains('expanded'));
+            document.body.classList.add('has-expanded-card')
+            console.log(document.querySelector('.card.expanded'));
+        } else {
+            document.body.classList.remove('has-expanded-card')
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.card')) {
+            document.querySelectorAll('.card.expanded').forEach(c => c.classList.remove('expanded'));
+            document.body.classList.remove('has-expanded-card');
+        }
+    });
+
     return card
 }

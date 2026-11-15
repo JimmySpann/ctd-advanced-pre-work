@@ -22,17 +22,18 @@ async function fetchAndRender(breedId, sort, page, element) {
     const processedBreedId = breedId === 'any' ? null : breedId; // Default to 'any' if no breedId is provided
     const { data: unprocessedPetImagesData, pagination } = await getPetImages(species, processedBreedId, sort, page);
 
-    await handleCardListCreation(unprocessedPetImagesData, rootElement);
+    await handleCardListCreation(unprocessedPetImagesData, rootElement, species);
     await handlePaginationCreation(processedBreedId, sort, rootElement, pagination);
 
 }
 
-async function handleCardListCreation(unprocessedPetImagesData, rootElement) {
+async function handleCardListCreation(unprocessedPetImagesData, rootElement, species) {
     const processedPetImagesData = unprocessedPetImagesData.map(pet => ({
         imageSrc: pet.url,
         imageAlt: pet.breeds[0]?.name || 'Unknown',
         title: pet.breeds[0]?.name || 'Unknown',
-        description: pet.breeds[0]?.description || 'No description available.'
+        description: pet.breeds[0]?.description || 'No description available.',
+        species: species
     }));
 
     const petGalleryListElement = rootElement.querySelector('.pet-gallery-list');
