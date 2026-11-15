@@ -11,16 +11,22 @@ async function updateSettings(species) {
     await petCardListElement.fetchAndRender(selectedBreedId, selectedSort);
 }
 
-const onRender = async (element) => {
-    const species = element.getAttribute('pet-type') || 'cat'
+const onRender = async (rootElement) => {
+    const loadingSpinnerElement = rootElement.querySelector('.gallery-settings-loading-spinner-container');
+    const galleryListContainer = rootElement.querySelector('.pet-gallery-settings-container');
+    loadingSpinnerElement.style.display = 'flex'
+    galleryListContainer.style.display = 'none';
+
+    const species = rootElement.getAttribute('pet-type') || 'cat'
     const petBreeds = await getPetBreeds(species);
 
-    element.querySelector('.gallery-settings-header').textContent = capitalizeFirstLetter(species) + " Gallery Settings"
-    element.querySelector('.gallery-settings-subheader').textContent = `Configure the settings for the ${species} gallery below.`
-    element.querySelector('#gallery-settings-breed-label').textContent = capitalizeFirstLetter(species) + " Breed:"
+    // set Text Context
+    rootElement.querySelector('.gallery-settings-header').textContent = capitalizeFirstLetter(species) + " Gallery"
+    rootElement.querySelector('.gallery-settings-subheader').textContent = `Configure the settings for the ${species} gallery below.`
+    rootElement.querySelector('#gallery-settings-breed-label').textContent = capitalizeFirstLetter(species) + " Breed:"
 
-    const breedSelectElement = element.querySelector('#gallery-breed-select');
-    const sortSelectElement = element.querySelector('#gallery-sort-select');
+    const breedSelectElement = rootElement.querySelector('#gallery-breed-select');
+    const sortSelectElement = rootElement.querySelector('#gallery-sort-select');
 
     petBreeds.forEach(breed => {
         const option = document.createElement('option');
@@ -31,6 +37,9 @@ const onRender = async (element) => {
 
     breedSelectElement.addEventListener('change', () => updateSettings(species));
     sortSelectElement.addEventListener('change', () => updateSettings(species));
+
+    loadingSpinnerElement.style.display = 'none'
+    galleryListContainer.style.display = 'grid'
 }
 
 export const options = {

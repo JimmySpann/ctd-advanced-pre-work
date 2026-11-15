@@ -1,16 +1,21 @@
 <div class="pet-gallery-settings">
-    <h3 class="gallery-settings-header">Pet Gallery Settings</h3>
-    <p class="gallery-settings-subheader">Configure the settings for the pet gallery below.</p>
+    <div class="gallery-settings-loading-spinner-container">
+        <div class="gallery-settings-loading-spinner"></div>
+    </div>
+    <div class="pet-gallery-settings-container">
+        <h2 class="gallery-settings-header">Pet Gallery</h2>
+        <p class="gallery-settings-subheader">Configure the settings for the pet gallery below.</p>
 
-    <label id="gallery-settings-breed-label" for="gallery-breed-select">Pet Breed:</label>
-    <select id="gallery-breed-select" name="gallery-breed">
-        <option value="any" selected>Any</option>
-    </select>
+        <label id="gallery-settings-breed-label" for="gallery-breed-select">Pet Breed:</label>
+        <select id="gallery-breed-select" name="gallery-breed">
+            <option value="any" selected>Any</option>
+        </select>
 
-    <label for="gallery-sort-select">Sort Direction:</label>
-    <select id="gallery-sort-select" name="gallery-sort">
-        <option value="rand" selected>Random</option>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-    </select>
+        <label for="gallery-sort-select">Sort Direction:</label>
+        <select id="gallery-sort-select" name="gallery-sort">
+            <option value="rand" selected>Random</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+    </div>
 </div>

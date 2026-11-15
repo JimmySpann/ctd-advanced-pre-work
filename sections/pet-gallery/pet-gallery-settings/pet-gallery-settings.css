@@ -3,9 +3,38 @@
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
+    min-height: 150px;
+}
 
+.pet-gallery-settings-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.gallery-settings-loading-spinner-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-settings-loading-spinner {
+    width: 150px;
+    height: 150px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
