@@ -1,12 +1,15 @@
 # CTD Advanced Pre-Work
 
-### Introduction (Why and What is this?)
-Site is structured into site tags and element creation factory for component based architecture in vanilla JS.
-Site runs on Vite. Vite is needed to handle env variables.
-Site uses "custom site tags" to give a modular, component-like feel to vanilla js.
-Components and Sections must be added to their respective root index.js files then added in the main js page to work
-Site relies heavily on "factory functions" to streamline element and custom tag creation, to keep code lean and DRY, and to make adding new components faster and easier
+### Introduction
+Built for **Code The Dream**, this project is a dynamic single-page application that lets users search and explore pet images and breed data via The Dog API and The Cat API. 
 
+Rather than relying on a traditional frontend framework, this application showcases advanced **vanilla JavaScript architecture**, implementing a custom component-based system using native Web Components/custom site tags and reusable element factory functions.
+
+#### Key Features & Architecture
+- **Pet & Breed Search:** Real-time data fetching and filtering using The Dog API and The Cat API.
+- **Vanilla Component Framework:** Custom site tags and element creation factory functions that keep code DRY, lean, and modular.
+- **Vite Build System:** Configured for secure environment variable handling.
+- **Developer Workflow:** Components and sections are registered through centralized root index files to streamline custom tag integration.
 
 ### Setup & Installation
 Follow these steps to get the project up and running locally on your machine:
@@ -26,7 +29,9 @@ Follow these steps to get the project up and running locally on your machine:
    npm install
    ```
 
-4. Start the development server:
+4. Add api keys to a .env
+
+5. Start the development server:
    ```bash
    npm run start
    ```
@@ -40,11 +45,11 @@ Follow these steps to get the project up and running locally on your machine:
 - [x] Add dogs page (since cat facts and health tips hide behind a pay wall)
 - [x] Clean up css
     - [x] Add proper loading styles
-- [ ] Finalize Read me
-   - [ ] Properly lay out intro
+- [~] Finalize Read me
+   - [x] Properly lay out intro
 
 #### Minor:
-- [ ] Add dynamic urls (Only for switching between cats and dogs)
+- [ ] Add dynamic urls (Only for switching between cats and dogs) - Maybe next time
 - [x] Replace nav bar with a plain header
 - [x] Add animation sliding between Pet Gallery and Dog Gallery
 - [x] Add click to enhance card feature? (Can probably just transform scale then center for time? (but I'd like an overlay))
@@ -59,14 +64,14 @@ Follow these steps to get the project up and running locally on your machine:
 
 #### Content
 - [x] Display the data for at least 2 of the end-points in the API.
-- [ ] Include navigation from each end-point’s page to the other end-points that are displayed.
-- [ ] Example: If you choose to use the Weather API, be able to click between a page that shows temperatures and a page that shows conditions. For the Star Wars API, have a page that shows character information and a page that shows film information.
+- [x] Include navigation from each end-point’s page to the other end-points that are displayed.
+- [x] Example: If you choose to use the Weather API, be able to click between a page that shows temperatures and a page that shows conditions. For the Star Wars API, have a page that shows character information and a page that shows film information. 
 - [x] Issue new GET requests for the linked data to display in the linked pages.
 
 #### Functionality
-- [ ] The code runs without issues and acts accordingly to the instructions in your README file.
-- [ ] Navigation between the different end-points behaves properly and is not slowed down by requesting more data than needs to be displayed (A slight caveat with the double gallery panes)
-- [ ] Code is readable and well structured
+- [x] The code runs without issues and acts accordingly to the instructions in your README file.
+- [x] Navigation between the different end-points behaves properly and is not slowed down by requesting more data than needs to be displayed **(A slight caveat with the double gallery panes)**
+- [x] Code is readable and well structured
 - [x] If including a user-interactive feature like a search field, be sure that you appropriately handle error cases
 Be thoughtful about what type of styling is used (example: font-sizes are not too small or large, colors are not too dark/light to be easily seen, etc.)
 - [x] Note: For building a front-end application, if you want to use an API that requires an API key, the API key should not be coded in your application logic (source code). It a security risk. Your API key should be stored in an environment variable in an .env file. This requires the use of a build tool like Vite, which programmatically injects the API key during the build process.
@@ -74,8 +79,7 @@ Be thoughtful about what type of styling is used (example: font-sizes are not to
 ### Questionable Decisions/Ways to Improve:
 - I spent way too much time trying to build component based framework then getting code block from it for days. I finally decided to scale back the scope to ensure I finish on time.
 - I almost passed user/api generated data into an htmlString then use innerHTML to render it... This would've created a Cross-Site Scripting vulnerability. Now I use the DOM parser to parse the html and just add user data through DOM query manipulation for better safety practices.
-- I found it difficult to focus on coding and move on once I was stuck with prior mention. So I needed a way to keep me motivated to code instead of infinitely putting it off. I found the following mental exercises to be a huge help:
-    1. Write down my values. Why I need to do this, the good that doing this means, and the bad that will come if I don't get it done. I started doing this 3-4 times a day with alarm reminders (though situational triggers like when I sit at my desk is the real goal)
-    2. I found myself fighting a lot. I'd fight the urge to quit coding. I'd fight the urge to not get distracted or seek some form of comfort instead. I found out that fighting make things worse. So instead of fighting against what I shouldn't do. I began "surrendering" to what I need to do. When I surrender to what I need to do, I'm no longer fighter to maintain its focus. I'm just in it. Later research shows this has some real psychological studies and implications like ACT (Acceptance and Commitment Therapy) or Backwards Law by Allan Watts. Cool!
-    3. Set clear time expectations of how long I will work on it each day, as well as the time frames I should plan to get it done.
+- I found it difficult to focus on coding and move on once I was stuck with prior mention. So I needed a way to keep me motivated to code instead of infinitely putting it off. I realized I was constantly fighting. Fighting to get myself to code. Fighting to not get distracted. When I realized I was exhuasting myself, I started to just "lean in to" or "surrender" to the work. This helped tremendously.
 - I planned to use "facts" or "health-tips" endpoints early on, then found out they were locked behind a pay wall.. Had to pivot and made the default sort random so the descriptions on images didn't all appear the same. Planning to clone the cat gallery for the dog api to reach the multi-page, multi-endpoint criteria quickly.
+- Getting the card to display full screen using z-index and transform was buggy. Next time, I would use a dedicated modal card
+- I feel a bit clueless with the design. Design and proper css is something I'll want ot improve on.
