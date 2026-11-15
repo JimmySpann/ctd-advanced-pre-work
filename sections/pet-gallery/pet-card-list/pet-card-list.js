@@ -22,6 +22,8 @@ async function fetchAndRender(breedId, sort, page, element) {
     const processedBreedId = breedId === 'any' ? null : breedId; // Default to 'any' if no breedId is provided
     const { data: unprocessedPetImagesData, pagination } = await getPetImages(species, processedBreedId, sort, page);
 
+    petGalleryListElement.innerHTML = '';
+
     await handleCardListCreation(unprocessedPetImagesData, rootElement, species);
     await handlePaginationCreation(processedBreedId, sort, rootElement, pagination);
 
