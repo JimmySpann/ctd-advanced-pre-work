@@ -15,14 +15,15 @@ async function fetchAndRender(breedId, sort, page, element) {
     const petGalleryListElement = rootElement.querySelector('.pet-gallery-list')
     const petGalleryLoadingSpinner = rootElement.querySelector('.gallery-list-loading-spinner-container');
 
-    requestAnimationFrame(() => { petGalleryListElement.style.opacity = '0' });
-    requestAnimationFrame(() => { petGalleryListElement.style.display = 'none' });
-    requestAnimationFrame(() => { petGalleryLoadingSpinner.style.display = 'flex' });
+
+    petGalleryListElement.style.opacity = '0';
+    setTimeout(() => {
+        petGalleryListElement.style.display = 'none';
+        petGalleryLoadingSpinner.style.display = 'flex';
+    }, 300);
 
     const processedBreedId = breedId === 'any' ? null : breedId; // Default to 'any' if no breedId is provided
     const { data: unprocessedPetImagesData, pagination } = await getPetImages(species, processedBreedId, sort, page);
-
-    petGalleryListElement.innerHTML = '';
 
     await handleCardListCreation(unprocessedPetImagesData, rootElement, species);
     await handlePaginationCreation(processedBreedId, sort, rootElement, pagination);
@@ -30,6 +31,9 @@ async function fetchAndRender(breedId, sort, page, element) {
 }
 
 async function handleCardListCreation(unprocessedPetImagesData, rootElement, species) {
+    const petGalleryListElement = rootElement.querySelector('.pet-gallery-list');
+    petGalleryListElement.innerHTML = '';
+
     const processedPetImagesData = unprocessedPetImagesData.map(pet => ({
         imageSrc: pet.url,
         imageAlt: pet.breeds[0]?.name || 'Unknown',
@@ -38,7 +42,6 @@ async function handleCardListCreation(unprocessedPetImagesData, rootElement, spe
         species: species
     }));
 
-    const petGalleryListElement = rootElement.querySelector('.pet-gallery-list');
     for (const cardData of processedPetImagesData) {
         const newCardElement = await createCard(cardData);
         petGalleryListElement.appendChild(newCardElement);
@@ -47,7 +50,10 @@ async function handleCardListCreation(unprocessedPetImagesData, rootElement, spe
     const petGalleryLoadingSpinner = rootElement.querySelector('.gallery-list-loading-spinner-container');
     petGalleryListElement.style.display = 'grid';
     petGalleryLoadingSpinner.style.display = 'none';
-    requestAnimationFrame(() => { petGalleryListElement.style.opacity = '1' });
+    setTimeout(() => {
+        petGalleryListElement.style.opacity = '1';
+    }, 300);
+
 }
 
 async function handlePaginationCreation(breedId, sort, rootElement, pagination) {

@@ -25,6 +25,7 @@ body {
 main {
     background-color: var(--bg-primary);
     flex: 1;
+    font-size: .9rem;
 }
 
 section#intro {
