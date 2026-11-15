@@ -30,7 +30,7 @@
     min-width: 400px;
 }
 
-/* Backdrop dim effect when a card is expanded */
+/* Backdrop dim when a card is expanded */
 body.has-expanded-card::after {
     content: '';
     position: fixed;

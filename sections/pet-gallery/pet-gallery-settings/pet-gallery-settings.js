@@ -14,17 +14,20 @@ async function updateSettings(species) {
 const onRender = async (rootElement) => {
     const loadingSpinnerElement = rootElement.querySelector('.gallery-settings-loading-spinner-container');
     const galleryListContainer = rootElement.querySelector('.pet-gallery-settings-container');
+
+    // Hide list show loading
     loadingSpinnerElement.style.display = 'flex'
     galleryListContainer.style.display = 'none';
 
     const species = rootElement.getAttribute('pet-type') || 'cat'
     const petBreeds = await getPetBreeds(species);
 
-    // set Text Context
+    // set text context
     rootElement.querySelector('.gallery-settings-header').textContent = capitalizeFirstLetter(species) + " Gallery"
     rootElement.querySelector('.gallery-settings-subheader').textContent = `Configure the settings for the ${species} gallery below.`
     rootElement.querySelector('#gallery-settings-breed-label').textContent = capitalizeFirstLetter(species) + " Breed:"
 
+    // set up select elements
     const breedSelectElement = rootElement.querySelector('#gallery-breed-select');
     const sortSelectElement = rootElement.querySelector('#gallery-sort-select');
 
@@ -38,6 +41,7 @@ const onRender = async (rootElement) => {
     breedSelectElement.addEventListener('change', () => updateSettings(species));
     sortSelectElement.addEventListener('change', () => updateSettings(species));
 
+    // Show list hide loading
     loadingSpinnerElement.style.display = 'none'
     galleryListContainer.style.display = 'grid'
 }
