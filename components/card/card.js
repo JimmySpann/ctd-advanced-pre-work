@@ -24,9 +24,7 @@ export async function createCard(cardData) {
 
         if (!isExpanded) {
             card.classList.add('expanded');
-            console.log(card.classList.contains('expanded'));
             document.body.classList.add('has-expanded-card')
-            console.log(document.querySelector('.card.expanded'));
         } else {
             document.body.classList.remove('has-expanded-card')
         }
