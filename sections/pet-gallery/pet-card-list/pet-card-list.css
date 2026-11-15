@@ -1,8 +1,20 @@
+.pet-gallery-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .pet-gallery-list {
+    height: calc(100vh - 20rem);
+    overflow-y: scroll;
+    align-content: start;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-auto-rows: max-content;
+    align-content: start;
     gap: 1.5rem;
     padding: 2rem;
+    opacity: 1;
+    transition: opacity 1s ease-out;
 }
 
 .pet-gallery-pagination {

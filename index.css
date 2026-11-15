@@ -36,6 +36,10 @@ section#intro {
     padding: 2rem;
 }
 
+.intro-subheader {
+    margin-top: 10px;
+}
+
 
 /* 1. Hide the actual checkbox */
 .toggle-checkbox {
@@ -58,7 +62,6 @@ section#intro {
     background: #ccc;
     border-radius: 99px;
     position: relative;
-    transition: background 0.3s ease;
 }
 
 .switch-pill::after {
@@ -73,11 +76,6 @@ section#intro {
     transition: transform 0.3s ease;
 }
 
-/* Move the switch knob when checked */
-.toggle-checkbox:checked+.switch-label .switch-pill {
-    background: #4a90e2;
-}
-
 .toggle-checkbox:checked+.switch-label .switch-pill::after {
     transform: translateX(24px);
 }
@@ -87,6 +85,7 @@ section#gallery h2 {
 }
 
 #gallery-viewport {
+    margin-top: -25px;
     width: 100%;
     overflow: hidden;
 }
