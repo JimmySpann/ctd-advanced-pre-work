@@ -10,34 +10,32 @@
 </head>
 
 <body>
-    <site-header></site-header>
+    <!-- <site-header></site-header> -->
     <main>
         <section id="intro">
             <h1>Welcome to Pet Gallery!</h1>
             <p>Discover pet images based on breeds! Supports cats and dogs!</p>
+            <h3>Choose your pet type!</h3>
+            <div id="pet-option">
+                <input type="checkbox" id="pet-toggle" class="toggle-checkbox" />
+
+                <!-- The visible switch -->
+                <label for="pet-toggle" class="switch-label">
+                    <span class="label-text">Cats</span>
+                    <span class="switch-pill"></span>
+                    <span class="label-text">Dogs</span>
+                </label>
+            </div>
         </section>
 
-        <section id="pet-option">
-            <h2>Choose your pet type!</h2>
-            <input type="checkbox" id="pet-toggle" class="toggle-checkbox" />
-
-            <!-- The visible switch -->
-            <label for="pet-toggle" class="switch-label">
-                <span class="label-text">Cats</span>
-                <span class="switch-pill"></span>
-                <span class="label-text">Dogs</span>
-            </label>
-        </section>
 
         <section id="gallery-viewport">
             <div id="gallery-container">
                 <div id="cat-gallery" class="gallery">
-                    <h2>Cat Gallery</h2>
                     <site-pet-gallery-settings pet-type="cat"></site-pet-gallery-settings>
                     <site-pet-card-list pet-type="cat"></site-pet-card-list>
                 </div>
                 <div id="dog-gallery" class="gallery">
-                    <h2>Dog Gallery</h2>
                     <site-pet-gallery-settings pet-type="dog"></site-pet-gallery-settings>
                     <site-pet-card-list pet-type="dog"></site-pet-card-list>
                 </div>

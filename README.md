@@ -39,13 +39,13 @@ Follow these steps to get the project up and running locally on your machine:
 - [x] Add pagination
 - [x] Add dogs page (since cat facts and health tips hide behind a pay wall)
 - [~] Clean up css
-    - [ ] Add proper loading styles
+    - [~] Add proper loading styles
 - [ ] Finalize Read me
    - [ ] Properly lay out intro
 
 #### Minor:
 - [ ] Add dynamic urls (to choose animal type, breed, sort direction, and page by navigation bar)
-- [ ] Replace nav bar with a fancier header
+- [x] Replace nav bar with a plain header
 - [x] Add animation sliding between Pet Gallery and Dog Gallery
 - [ ] Add click to enhance card feature? (Can probably just transform scale then center for time? (but I'd like an overlay))
 
@@ -61,13 +61,13 @@ Follow these steps to get the project up and running locally on your machine:
 - [x] Display the data for at least 2 of the end-points in the API.
 - [ ] Include navigation from each end-point’s page to the other end-points that are displayed.
 - [ ] Example: If you choose to use the Weather API, be able to click between a page that shows temperatures and a page that shows conditions. For the Star Wars API, have a page that shows character information and a page that shows film information.
-- [ ] Issue new GET requests for the linked data to display in the linked pages.
+- [x] Issue new GET requests for the linked data to display in the linked pages.
 
 #### Functionality
 - [ ] The code runs without issues and acts accordingly to the instructions in your README file.
-- [ ] Navigation between the different end-points behaves properly and is not slowed down by requesting more data than needs to be displayed
+- [ ] Navigation between the different end-points behaves properly and is not slowed down by requesting more data than needs to be displayed (A slight caveat with the double gallery panes)
 - [ ] Code is readable and well structured
-- [ ] If including a user-interactive feature like a search field, be sure that you appropriately handle error cases
+- [x] If including a user-interactive feature like a search field, be sure that you appropriately handle error cases
 Be thoughtful about what type of styling is used (example: font-sizes are not too small or large, colors are not too dark/light to be easily seen, etc.)
 - [x] Note: For building a front-end application, if you want to use an API that requires an API key, the API key should not be coded in your application logic (source code). It a security risk. Your API key should be stored in an environment variable in an .env file. This requires the use of a build tool like Vite, which programmatically injects the API key during the build process.
 
